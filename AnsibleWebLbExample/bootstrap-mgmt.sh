@@ -11,7 +11,7 @@ cp -a /vagrant/examples/* /home/vagrant
 chown -R vagrant:vagrant /home/vagrant
 
 # configure hosts file for our internal network defined by Vagrantfile
-cat >> /etc/hosts
+cat >> /etc/hosts <<EOF
 
 # vagrant environment nodes
 10.0.15.10  mgmt
@@ -25,3 +25,4 @@ cat >> /etc/hosts
 10.0.15.27  web7
 10.0.15.28  web8
 10.0.15.29  web9
+EOF
