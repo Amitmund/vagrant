@@ -452,4 +452,30 @@ end
 
 
 
+# To check the status of the vm in this project directory/Vagrantfile:
+vagrant status
+
+# To start the box in this Vagrantfile.
+vagrant up
+
+# To check the status of the vm in this project directory/Vagrantfile: [ again ]
+vagrant status
+
+# Over here you have to specify the vm name.
+vagrant ssh web
+
+# if you want to destroy a vm.
+vagrant destroy web
+
+# To check the status of the vm in this project directory/Vagrantfile: [ again ]
+vagrant status
+
+# To bring the new web vm:
+vagrant up web
+
+##########################################################################################################################
+
+
+
+
 
