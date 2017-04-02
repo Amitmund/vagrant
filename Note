@@ -153,6 +153,7 @@ Vagrant.configure(2) do |config|
 # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
+   # Amit Mund Notes: if you have a multi machine Vagrantfile, you can have different bootstrap-vmname.sh” file based on the need.
   config.vm.provision :shell, path: "bootstrap.sh"
   # config.vm.provision "shell", inline <<-SHELL
   #   sudo apt-get install apache2
@@ -167,19 +168,7 @@ cat >html/index.html
 <body>
 <pre>
 
-    _____________________________________________________
-   /       _  _  ____    _            _   _              \
-   |   ___| || ||___ \  | |_ ___  ___| |_(_)_ __   __ _  |
-   |  / _ \ || |_ __) | | __/ _ \/ __| __| | '_ \ / _` | |
-   | |  __/__   _/ __/  | ||  __/\__ \ |_| | | | | (_| | |
-   |  \___|  |_||_____|  \__\___||___/\__|_|_| |_|\__, | |
-   \                                              |___/  /
-    -----------------------------------------------------
-           \   ^__^
-            \  (oo)\_______
-               (__)\       )\/\
-                   ||----w |
-                   ||     ||
+Testing page
 
 </pre>
 </body>
