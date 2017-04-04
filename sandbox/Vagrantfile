@@ -1,0 +1,16 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # create testing node
+  config.vm.define :testing do |testing_config|
+      testing_config.vm.box = "ubuntu/trusty64"
+      testing_config.vm.hostname = "testing"
+      testing_config.vm.network :private_network, ip: "10.0.99.99"
+      testing_config.vm.provider "virtualbox" do |vb|
+        vb.memory = "256"
+      end
+      testing_config.vm.provision :shell, path: "bootstrap-testing.sh"
+  end
+end
