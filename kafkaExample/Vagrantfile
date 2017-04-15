@@ -1,0 +1,19 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # create kafka node
+  config.vm.define :kafka do |kafka_config|
+      kafka_config.vm.box = "ubuntu/xenial64"
+      #kafka_config.vm.box = "bento/centos-6.7"
+      kafka_config.vm.hostname = "kafka"
+      kafka_config.vm.network :private_network, ip: "10.0.99.100"
+      kafka_config.vm.network "forwarded_port", guest: 2181, host: "42181"
+      kafka_config.vm.network "forwarded_port", guest: 9092, host: "49092"
+      kafka_config.vm.provider "virtualbox" do |vb|
+        vb.memory = "786"
+      end
+      kafka_config.vm.provision :shell, path: "bootstrap.sh"
+  end
+end
